@@ -74,6 +74,7 @@ class ArrayController extends Controller
 
         //Testes
         $meuArray = Arr::add(['name' => 'Desk', 'price' => 50], 'price', 100);
+        // ['name' => 'Desk', 'price' => 50]
         dd($array);
 
 
