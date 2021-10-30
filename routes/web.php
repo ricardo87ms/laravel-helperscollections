@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Helpers\ArrayController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +16,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::prefix('helpers')->name('helpers.')->group(function () {
+
+    Route::prefix('arrays')->name('arrays.')->group(function () {
+
+        Route::get('accessible', [ArrayController::class, 'accessible'])->name('accessible');
+        Route::get('add', [ArrayController::class, 'add'])->name('add');
+    });
 });
